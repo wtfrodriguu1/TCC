@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.column2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.card-container {
+    display: flex; /* ou display: grid; para usar grid */
+    flex-wrap: wrap; /* se estiver usando flexbox */
+    /* justify-content: space-between; ou qualquer outra opção de alinhamento */
+    gap: 2vw;
+    padding-left: 2vw;
+  }
+  
+  .card {
+    margin-top: 5%;
+    width: 30%; /* ajuste conforme necessário */
+    height: 55vh;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .card h3 {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card p {
+    margin-bottom: 0;
+  }
