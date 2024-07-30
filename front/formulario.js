@@ -3,8 +3,9 @@ let button = document.querySelector("button");
 button.onclick = async function() {
     let nome_empresa = document.getElementById("nome-empresa").value;
     let descricao = document.getElementById("descricao").value;
+    let enviar_formulario = document.getElementById("enviar_formulario").value;
 
-    let data = {nome_empresa,descricao}
+    let data = {nome_empresa,descricao,enviar_formulario}
 
     const response = await fetch ('http://localhost:3001/api/cadastro/vagas', {
         method: "POST",
@@ -17,7 +18,7 @@ button.onclick = async function() {
     console.log(content);
     if(content.sucess) {
         alert("Formulário enviado com sucesso, aproveite!")
-        window.location.reload();
+        window.location.href = "../front/vagas.html";
     } else {
         alert("Não enviado");
     }
