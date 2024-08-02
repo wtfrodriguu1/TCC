@@ -14,21 +14,23 @@
 
 
 .card-container {
-    display: flex; /* ou display: grid; para usar grid */
-    flex-wrap: wrap; /* se estiver usando flexbox */
-    /* justify-content: space-between; ou qualquer outra opção de alinhamento */
-    gap: 2vw;
-    padding-left: 2vw;
+  display: flex;
+  gap: 5vh;
+  
+  
+  
+
   }
   
   .card {
     margin-top: 5%;
-    width: 30%; /* ajuste conforme necessário */
-    height: 55vh;
+    width: 13vw; 
+    height: 35vh;
     margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #ccc;
   }
   
   .card img {
@@ -44,4 +46,11 @@
   
   .card p {
     margin-bottom: 0;
+  }
+  .novavaga{
+    font-size: 40px;
+  }
+  
+  h2{
+    font-size: 50px;
   }
