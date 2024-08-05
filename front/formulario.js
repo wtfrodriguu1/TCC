@@ -7,7 +7,7 @@ button.onclick = async function() {
 
     let data = {nome_empresa,descricao,enviar_formulario}
 
-    const response = await fetch ('http://localhost:3001/api/cadastro/vagas', {
+    const response = await fetch ('http://localhost:3005/api/cadastro/vagas', {
         method: "POST",
         headers: {"Content-type": "application/json;charset=UTF-8"},
         body: JSON.stringify(data)

@@ -1,5 +1,5 @@
 async function getVagas() {
-    const response = await fetch ('http://localhost:3001/api/buscarVagas', {
+    const response = await fetch ('http://localhost:3005/api/buscarVagas', {
         method: "GET",
         headers: {"Content-type": "application/json;charset=UTF-8"}
     });

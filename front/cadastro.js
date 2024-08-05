@@ -1,17 +1,13 @@
 let button = document.getElementById("enviar");
 
 button.onclick = async function() {
-
     let email = document.getElementById("email").value;
-    let senha = document.getElementById("password").value;
-    if(!email && !senha) {
-        alert("Preencha todos os campos") 
-        return false   
-    }    else {
+    let password = document.getElementById("password").value;
+    
 
-    let data = {email,senha}
+    let data = {email,password}
 
-    const response = await fetch ('http://localhost:3005/api/store/task', {
+    const response = await fetch ('http://localhost:3005/api/cadastrar', {
         method: "POST",
         headers: {"Content-type": "application/json;charset=UTF-8"},
         body: JSON.stringify(data)
@@ -22,9 +18,8 @@ button.onclick = async function() {
     console.log(content);
     if(content.sucess) {
         alert("Formulário enviado com sucesso, aproveite!")
-        window.location.reload();
+        window.location.href = "../front/vagas.html";
     } else {
         alert("Não enviado");
     }
 }
-    }
