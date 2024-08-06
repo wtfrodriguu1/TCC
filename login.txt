@@ -1,0 +1,10 @@
+verificar se o usuario esta no banco
+	- se sim, irá para home
+	- se não, alert falando que o usuario nao existe
+
+
+como?
+
+usando if/else (condições)
+usando while ou for (laço de repetição)
+
