@@ -1,18 +1,29 @@
-let button = document.getElementById("enviar1");
+document.getElementById("enviar1").onclick = async function() {
+    let email = document.getElementById("email").value; // Obtendo o valor dos campos
+    let password = document.getElementById("password").value;
+    
+    let data = { email, password }; // Nome dos campos deve corresponder ao que o servidor espera
 
-button.onclick = async function() {
-    const response = await fetch ('http://localhost:3002/api/login', {
-        method: "GET",
-        headers: {"Content-type": "application/json;charset=UTF-8"}
-    });
+    try {
+        const response = await fetch('http://localhost:3005/api/login', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json;charset=UTF-8"
+            },
+            body: JSON.stringify(data)
+        });
 
-    let content = await response.json();
+        let content = await response.json();
 
-    console.log(content);
-    if(content.sucess) {
-        alert("deu bom")
-        // window.location.href = "../front/vagas.html";
-    } else {
-        alert("Não deu bom");
+        console.log(content);
+        if (content.sucess) {
+            alert("Login bem-sucedido!");
+            window.location.href = "../front/vagas.html";
+        } else {
+            alert("Falha no login: " + content.message);
+        }
+    } catch (error) {
+        console.error('Erro ao fazer login:', error);
+        alert("Erro ao fazer login. Verifique o console para mais detalhes.");
     }
 }
