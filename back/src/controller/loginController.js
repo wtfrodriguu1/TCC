@@ -1,33 +1,40 @@
 const connection = require('../config/db');
 const dotenv = require('dotenv').config();
 
+async function loginUser(request, response) {
+    const { email, password } = request.body; // Ajustado para usar "password"
 
-// Buscar login no BD - GET
-async function buscandoVagas(request, response) {
-    const query = "SELECT * FROM cadastro;";
+    const query = "SELECT * FROM cadastro WHERE email = ? AND senha = ?";
 
-    connection.query(query, (err, results) => {
-        if (results) {
-            response
-                .status(201)
-                .json({
-                    sucess: true,
-                    message: "Sucesso com o GET!",
-                    data: results
-                })
-        } else {
+    connection.query(query, [email, password], (err, results) => {
+        if (err) {
             response
                 .status(400)
                 .json({
                     sucess: false,
-                    message: "ops, deu problema no GET!",
+                    message: "Ops, deu problema no login!",
                     data: err
-                })
+                });
+        } else if (results.length > 0) { // Verifica se há resultados
+            response
+                .status(200)
+                .json({
+                    sucess: true,
+                    message: "Login bem-sucedido!",
+                    data: results
+                });
+        } else {
+            response
+                .status(401) // Código de status para "Não autorizado"
+                .json({
+                    sucess: false,
+                    message: "Credenciais inválidas!",
+                    data: []
+                });
         }
-    })
-
+    });
 }
 
 module.exports = {
-    buscandoVagas
+    loginUser
 }

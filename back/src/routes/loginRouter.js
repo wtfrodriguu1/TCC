@@ -1,6 +1,6 @@
 const { Router } = require('express');
-const { buscandoVagas } = require('../controller/loginController');
+const {loginUser } = require('../controller/loginController');
 const router = Router();
 
-router.get("/login", buscandoVagas)
+router.post("/login", loginUser)
 module.exports = router;
