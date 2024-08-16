@@ -14,13 +14,14 @@
 
 
 .card-container {
-  display: flex;
-  gap: 5vh;
-  
-  
-  
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
 
-  }
+.card-container:nth-child(4n) {
+  grid-column: 1;
+}
   
   .card {
     margin-top: 5%;
