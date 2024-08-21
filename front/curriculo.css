@@ -1,0 +1,19 @@
+.bloco_perfil > a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .bloco_nav > a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .upload{
+    text-align: center;
+    width: 20%;
+    height: 30%;
+    margin-top: 20%;
+    margin-left: 40%;
+  }
+
+  
