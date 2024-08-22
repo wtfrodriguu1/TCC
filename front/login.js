@@ -5,7 +5,7 @@ document.getElementById("enviar1").onclick = async function() {
     let data = { email, password }; // Nome dos campos deve corresponder ao que o servidor espera
 
     try {
-        const response = await fetch('http://localhost:3005/api/login', {
+        const response = await fetch('http://localhost:3008/api/login', {
             method: "POST",
             headers: {
                 "Content-type": "application/json;charset=UTF-8"
@@ -18,7 +18,10 @@ document.getElementById("enviar1").onclick = async function() {
         console.log(content);
         if (content.sucess) {
             alert("Login bem-sucedido!");
-            window.location.href = "../front/vagas.html";
+            console.log(content)
+            //colocar no localStorage o content.data
+            localStorage.setItem("usuario", JSON.stringify(content.data))
+            // window.location.href = "../front/vagas.html";
         } else {
             alert("Falha no login: " + content.message);
         }

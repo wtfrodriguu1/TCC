@@ -21,7 +21,7 @@ async function loginUser(request, response) {
                 .json({
                     sucess: true,
                     message: "Login bem-sucedido!",
-                    data: results
+                    data: results[0]
                 });
         } else {
             response

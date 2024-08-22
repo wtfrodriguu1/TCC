@@ -8,21 +8,12 @@
     max-width: 600px;
 }
 
-.feed-item img {
-    max-width: 100%;
-    border-radius: 8px;
-    
-}
+
 
 .legenda {
     margin-top: 10px;
 }
 
-
-
-.curtida-btn:hover {
-    background-color: #2980b9;
-}
 
 .bloco_perfil > a {
     text-decoration: none;

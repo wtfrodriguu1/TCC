@@ -8,7 +8,7 @@ button.onclick = async function() {
 
     let data = {nome_user,descricao1,idade,enviar_formularioc}
 
-    const response = await fetch ('http://localhost:3005/api/carregar', {
+    const response = await fetch ('http://localhost:3008/api/carregar', {
         method: "POST",
         headers: {"Content-type": "application/json;charset=UTF-8"},
         body: JSON.stringify(data)

@@ -4,11 +4,12 @@ const dotenv = require('dotenv').config();
 // Cadastrar pessoa - POST
 async function storeCadastro(request, response) {
     const params = Array(
+        request.body.name,
         request.body.email,
         request.body.password
     );
 
-    const query = "INSERT INTO cadastro(email, senha) VALUES(?,?)";
+    const query = "INSERT INTO cadastro(nome, email, senha) VALUES(?,?,?)";
 
     connection.query(query, params, (err, results) => {
         if(results) {
