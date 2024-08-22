@@ -18,15 +18,7 @@
     margin-top: 10px;
 }
 
-.curtida-btn {
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 2px;
-}
+
 
 .curtida-btn:hover {
     background-color: #2980b9;

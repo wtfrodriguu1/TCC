@@ -9,10 +9,18 @@ create table vagas(
 
 create table cadastro(
 	id int primary key auto_increment,
+    nome varchar (30) not null,
     email varchar(50) not null,
     senha varchar(40) not null
 );
+create table curriculo(
+	id int primary key auto_increment,
+    nome varchar (40) not null,
+    idade varchar (3) not null,
+    descricao varchar (300) not null
+);
 
-select*from vagas, cadastro;
+
+select * from curriculo, vagas, cadastro;
 
 drop table vagas;
