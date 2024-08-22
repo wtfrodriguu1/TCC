@@ -19,8 +19,11 @@ create table curriculo(
     idade varchar (3) not null,
     descricao varchar (300) not null
 );
+create table postagem(
+	titulo varchar(100) not null,
+    texto varchar(345) not null
+);
 
-
-select * from curriculo, vagas, cadastro;
+select * from curriculo, vagas, cadastro, postagem;
 
 drop table vagas;
