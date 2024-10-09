@@ -8,7 +8,7 @@ button.onclick = async function() {
 
     let data = {name,email,password}
 
-    const response = await fetch ('http://localhost:3008/api/cadastrar', {
+    const response = await fetch ('http://localhost:3005/api/cadastrar', {
         method: "POST",
         headers: {"Content-type": "application/json;charset=UTF-8"},
         body: JSON.stringify(data)

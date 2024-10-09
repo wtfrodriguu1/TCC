@@ -5,7 +5,7 @@ document.getElementById("enviar1").onclick = async function() {
     let data = { email, password }; // Nome dos campos deve corresponder ao que o servidor espera
 
     try {
-        const response = await fetch('http://localhost:3008/api/login', {
+        const response = await fetch('http://localhost:3005/api/login', {
             method: "POST",
             headers: {
                 "Content-type": "application/json;charset=UTF-8"
