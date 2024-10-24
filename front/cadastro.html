@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,10 +12,10 @@
         <div class="square">
             <h1>Cadastre-se</h1>
 
-            <form>
+            <form id="formulario"> <!-- Adicionando id para o formulário -->
                 <div class="form-group">
                     <label for="name">Nome</label>
-                    <input type="name" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -25,13 +25,21 @@
                     <label for="password">Defina sua senha (+ de 6 caracteres)</label>
                     <input type="password" id="password" name="password" required>
                 </div>
+                <div>
+                    <label>
+                        <input id="empresa" type="radio" name="tipo" value="empresa" required>
+                        Empresa
+                    </label><br>
+            
+                    <label>
+                        <input id="cliente" type="radio" name="tipo" value="cliente" required>
+                        Cliente
+                    </label>
+                </div>
                 <div class="enviar">
                     <button id="enviar" type="button">Criar Conta</button>
                 </div>
             </form>
-            
-                
-            
         </div>
     </div>
     <script src="cadastro.js"></script>

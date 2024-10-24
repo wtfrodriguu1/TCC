@@ -14,7 +14,8 @@ document.getElementById("enviar1").onclick = async function() {
         });
 
         let content = await response.json();
-
+        //localStorage.setItem() <-- utilizar esse comando para salvar o tipo de conta
+            localStorage.setItem("tipoConta")
         console.log(content);
         if (content.sucess) {
             alert("Login bem-sucedido!");

@@ -4,23 +4,42 @@ button.onclick = async function() {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
-    
 
-    let data = {name,email,password}
-
-    const response = await fetch ('http://localhost:3005/api/cadastrar', {
-        method: "POST",
-        headers: {"Content-type": "application/json;charset=UTF-8"},
-        body: JSON.stringify(data)
-    });
-
-    let content = await response.json();
-
-    console.log(content);
-    if(content.sucess) {
-        alert("Formulário enviado com sucesso, aproveite!")
-        window.location.href = "../front/login.html";
-    } else {
-        alert("Não enviado");
+    // Verifica qual opção foi selecionada
+    let tipoSelecionado;
+    if (document.getElementById('empresa').checked) {
+        tipoSelecionado = 1;
+    } else if (document.getElementById('cliente').checked) {
+        tipoSelecionado = 2;
     }
-}
+
+    // Verifica se um tipo foi selecionado
+    if (!tipoSelecionado) {
+        alert("Por favor, selecione um tipo.");
+        return; // Para a execução caso nenhum tipo tenha sido selecionado
+    }
+
+    // Prepara os dados para envio
+    let data = { name, email, password, tipoSelecionado };
+
+    try {
+        const response = await fetch('http://localhost:3005/api/cadastrar', {
+            method: "POST",
+            headers: { "Content-Type": "application/json;charset=UTF-8" },
+            body: JSON.stringify(data)
+        });
+
+        let content = await response.json();
+
+        console.log(content);
+        if (content.success) { // Corrigido de 'sucess' para 'success'
+            alert("Formulário enviado com sucesso, aproveite!");
+            window.location.href = "../front/login.html";
+        } else {
+            alert("Não enviado: " + (content.message || "Erro desconhecido"));
+        }
+    } catch (error) {
+        console.error("Erro:", error);
+        alert("Houve um erro ao enviar o formulário.");
+    }
+};

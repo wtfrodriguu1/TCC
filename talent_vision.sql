@@ -11,7 +11,8 @@ create table cadastro(
 	id int primary key auto_increment,
     nome varchar (30) not null,
     email varchar(50) not null,
-    senha varchar(40) not null
+    senha varchar(40) not null,
+    tipo int not null
 );
 create table curriculo(
 	id int primary key auto_increment,

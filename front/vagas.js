@@ -12,7 +12,8 @@ async function getVagas() {
         // window.location.reload();
 
         const card_container = document.querySelector('.card-container');
-
+        //localStorage.getItem() <-- utilizar esse comando para buscar o tipo de conta
+        //COM O IF E ELSE atualizar o style do botão para display: block
         for(let i = 0; i < content.data.length;i++){
             card_container.innerHTML += `<div class="card"><h3>${content.data[i].nome_empresa}</h3><p>${content.data[i].descricao}</p></div>`;
         }
