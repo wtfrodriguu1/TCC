@@ -18,7 +18,7 @@ async function storeCadastro(request, response) {
             response
                 .status(201)
                 .json({
-                    sucess: true, 
+                    success: true, 
                     message: "Sucesso!",
                     data: results
                 })
@@ -26,7 +26,7 @@ async function storeCadastro(request, response) {
             response
                 .status(400)
                 .json({
-                    sucess: false,
+                    success: false,
                     message: "ops, deu problema!",
                     data: err
                 })

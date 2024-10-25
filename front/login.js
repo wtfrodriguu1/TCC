@@ -14,15 +14,13 @@ document.getElementById("enviar1").onclick = async function() {
         });
 
         let content = await response.json();
-        //localStorage.setItem() <-- utilizar esse comando para salvar o tipo de conta
-            localStorage.setItem("tipoConta")
         console.log(content);
-        if (content.sucess) {
+        if (content.success) {
             alert("Login bem-sucedido!");
             console.log(content)
             //colocar no localStorage o content.data
             localStorage.setItem("usuario", JSON.stringify(content.data))
-            // window.location.href = "../front/vagas.html";
+            window.location.href = "../front/vagas.html";
         } else {
             alert("Falha no login: " + content.message);
         }

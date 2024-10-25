@@ -1,3 +1,23 @@
+let usuario = JSON.parse(localStorage.getItem('usuario'))
+
+console.log(usuario)
+
+if(usuario) {
+    let blocoNav = document.getElementById("blocoNav")
+    blocoNav.style.display = 'none';
+
+    if(usuario.tipo == 1) {
+        let botaovaga = document.getElementById("botaovaga")
+        botaovaga.style.display = 'block';
+    } else {
+        let botaovaga = document.getElementById("botaovaga")
+        botaovaga.style.display = 'none';
+    }
+} else {
+    window.location.href = "/front/login.html"
+}
+
+
 async function getVagas() {
     const response = await fetch ('http://localhost:3005/api/buscarVagas', {
         method: "GET",

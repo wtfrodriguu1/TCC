@@ -8,10 +8,11 @@ async function loginUser(request, response) {
 
     connection.query(query, [email, password], (err, results) => {
         if (err) {
+            console.log("erro", err)
             response
                 .status(400)
                 .json({
-                    sucess: false,
+                    success: false,
                     message: "Ops, deu problema no login!",
                     data: err
                 });
@@ -19,15 +20,16 @@ async function loginUser(request, response) {
             response
                 .status(200)
                 .json({
-                    sucess: true,
+                    success: true,
                     message: "Login bem-sucedido!",
                     data: results[0]
                 });
         } else {
+            console.log(results.length)
             response
                 .status(401) // Código de status para "Não autorizado"
                 .json({
-                    sucess: false,
+                    success: false,
                     message: "Credenciais inválidas!",
                     data: []
                 });
