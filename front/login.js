@@ -17,9 +17,17 @@ document.getElementById("enviar1").onclick = async function () {
         console.log(content);
         if (content.success) {
             alert("Login bem-sucedido!");
-            console.log(content)
-            //colocar no localStorage o content.data
+            
             localStorage.setItem("usuario", JSON.stringify(content.data))
+            
+            localStorage.setItem("id", JSON.stringify(content.data.id))
+            
+            if(content.data.tipo == 1){
+                localStorage.setItem("Empresa", "Empresa");
+            }else{
+                localStorage.setItem("Usuario", "Usuario");
+            }
+            
             window.location.href = "../front/vagas.html";
         } else {
             alert("Falha no login: " + content.message);
