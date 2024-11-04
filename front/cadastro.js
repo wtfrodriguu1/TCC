@@ -1,6 +1,6 @@
 let button = document.getElementById("enviar");
 
-button.onclick = async function() {
+button.onclick = async function () {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;

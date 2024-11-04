@@ -3,9 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: rgb(255, 243, 192);
 }
+
 .container {
     position: relative;
     display: flex;
@@ -18,8 +20,9 @@ body{
     background-color: rgb(0, 185, 71);
     margin-top: 20vh;
     border-radius: 30px;
-}   
-h1{
+}
+
+h1 {
     display: flex;
     justify-content: center;
     font-size: 3vw;
@@ -27,22 +30,25 @@ h1{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.form-group{
+.form-group {
     display: flex;
     justify-content: center;
 }
-form{
+
+form {
     display: flex;
     justify-content: center;
     flex-direction: column;
     height: 20vh;
-    
+
 }
-.enviar{
+
+.enviar {
     display: flex;
     justify-content: center;
 }
-button{
+
+button {
     background-color: rgb(255, 243, 192);
     margin-top: 2vh;
     width: 7vw;
@@ -50,16 +56,19 @@ button{
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-#email{
+
+#email {
     height: 5vh;
     border-radius: 4px;
     background-color: rgb(228, 228, 228);
 }
-#password{
+
+#password {
     height: 5vh;
     border-radius: 4px;
-    background-color: rgb(228, 228, 228 );
+    background-color: rgb(228, 228, 228);
 }
-label{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+label {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }

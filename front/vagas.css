@@ -1,14 +1,14 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .column2 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -17,17 +17,17 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  
-  
+
+
 }
 
 .card-container:nth-child(4n) {
   grid-column: 1;
 }
-  
+
 .card {
   margin-top: 5%;
-  width: 13vw; 
+  width: 13vw;
   height: 35vh;
   margin-bottom: 20px;
   padding: 20px;
@@ -49,21 +49,21 @@
   display: flex;
   justify-content: center;
 }
-.novavaga{
+
+.novavaga {
   font-size: 30px;
 }
 
-h2{
+h2 {
   font-size: 40px;
 }
 
-.bloco_perfil > a {
+.bloco_perfil>a {
   text-decoration: none;
   color: black;
 }
 
-.bloco_nav > a {
+.bloco_nav>a {
   text-decoration: none;
   color: black;
 }
-
