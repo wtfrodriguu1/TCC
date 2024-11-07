@@ -7,6 +7,8 @@ create table vagas(
     nome_empresa varchar(20) not null,
     descricao text not null,
     requisitos varchar(350) not null,
+    beneficios varchar(400) not null,
+    contato varchar(100) not null,
 	id_empresa int, 
     foreign key (id_empresa) references cadastro(id)
 );

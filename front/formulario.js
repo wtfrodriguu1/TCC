@@ -4,10 +4,11 @@ button.onclick = async function () {
     let nome_empresa = document.getElementById("nome-empresa").value;
     let descricao = document.getElementById("descricao").value;
     let requisitos = document.getElementById("requisitos").value;
-    let enviar_formulario = document.getElementById("enviar_formulario").value;
+    let beneficios = document.getElementById("beneficios").value;
+    let contato = document.getElementById("contato").value;
     let id = localStorage.getItem("id");
 
-    let data = { nome_empresa, descricao, requisitos, enviar_formulario, id }
+    let data = { nome_empresa, descricao, requisitos, beneficios, contato, id }
 
     const response = await fetch('http://localhost:3005/api/cadastro/vagas', {
         method: "POST",

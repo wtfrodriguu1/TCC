@@ -7,12 +7,14 @@ async function storeTask(request, response) {
         request.body.nome_empresa,
         request.body.descricao,
         request.body.requisitos,
+        request.body.beneficios,
+        request.body.contato,
         request.body.id
     );
 
     console.log(params)
 
-    const query = "INSERT INTO vagas(nome_empresa, descricao, requisitos, id_empresa) VALUES(?, ?,?,?)";
+    const query = "INSERT INTO vagas(nome_empresa, descricao, requisitos, beneficios, contato, id_empresa) VALUES(?,?,?,?,?,?)";
 
     connection.query(query, params, (err, results) => {
         if(results) {

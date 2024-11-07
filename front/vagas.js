@@ -12,11 +12,16 @@ if (usuario) {
     } else {
         let botaovaga = document.getElementById("botaovaga")
         botaovaga.style.display = 'none';
-    }
+    } 
 } else {
-    // window.location.href = "/front/login.html"
+    let blocoNav = document.getElementById("blocoNav")
+    blocoNav.style.display = 'block';
 }
-
+function limparLocalStorage() {
+    localStorage.clear();
+    console.log('Local Storage limpo!');
+    location.reload();
+}
 
 async function getVagas() {
     const response = await fetch('http://localhost:3005/api/buscarVagas', {
