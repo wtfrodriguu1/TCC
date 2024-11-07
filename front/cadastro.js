@@ -2,8 +2,11 @@ let button = document.getElementById("enviar");
 
 button.onclick = async function () {
     let name = document.getElementById("name").value;
+    let date = document.getElementById("data-nascimento").value;
+    let telefone = document.getElementById("telefone").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
+    
 
     // Verifica qual opção foi selecionada
     let tipoSelecionado;
@@ -20,7 +23,7 @@ button.onclick = async function () {
     }
 
     // Prepara os dados para envio
-    let data = { name, email, password, tipoSelecionado };
+    let data = { name, date, telefone, email, password, tipoSelecionado };
 
     try {
         const response = await fetch('http://localhost:3005/api/cadastrar', {

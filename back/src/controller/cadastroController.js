@@ -6,12 +6,14 @@ async function storeCadastro(request, response) {
     console.log(request.body);
     const params = Array(
         request.body.name,
+        request.body.date,
+        request.body.telefone,
         request.body.email,
         request.body.password,
         request.body.tipoSelecionado,
     );
 
-    const query = "INSERT INTO cadastro(nome, email, senha, tipo) VALUES(?,?,?,?)";
+    const query = "INSERT INTO cadastro(nome, nascimento, telefone, email, senha, tipo) VALUES(?,?,?,?,?,?)";
 
     connection.query(query, params, (err, results) => {
         if(results) {
