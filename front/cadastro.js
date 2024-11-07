@@ -9,6 +9,7 @@ button.onclick = async function () {
     
 
     // Verifica qual opção foi selecionada
+
     let tipoSelecionado;
     if (document.getElementById('empresa').checked) {
         tipoSelecionado = 1;

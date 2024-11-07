@@ -11,14 +11,12 @@
   align-items: center;
 }
 
-
-
 .card-container {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-
-
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card-container:nth-child(4n) {
@@ -26,14 +24,15 @@
 }
 
 .card {
-  margin-top: 5%;
-  width: 13vw;
-  height: 35vh;
+  margin-top: 7%;
+  width: 30vw;
+  height: 40vh;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 20px;  
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #ccc;
+
 }
 
 .card h3 {
@@ -56,6 +55,7 @@
 
 h2 {
   font-size: 40px;
+  display: grid;
 }
 
 .bloco_perfil>a {
