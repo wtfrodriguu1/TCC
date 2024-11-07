@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vagainfo.css">
     <title>Informações da vaga</title>
 </head>
 <body>
+    <div class="container">
+        <h1>Informações da empresa</h1>
+        <form id="formularioEmpresa">
+            <!-- Nome da Empresa -->
+            <div class="form-group">
+                <label for="nomeEmpresa">Nome da Empresa:</label>
+                <input type="text" id="nomeEmpresa" name="nomeEmpresa" required>
+            </div>
     
+            <!-- Descrição da Empresa -->
+            <div class="form-group">
+                <label for="descricaoEmpresa">Descrição da Empresa:</label>
+                <textarea id="descricaoEmpresa" name="descricaoEmpresa" required></textarea>
+            </div>
+    
+            <!-- Requisitos -->
+            <div class="form-group">
+                <label for="requisitos">Requisitos:</label>
+                <textarea id="requisitos" name="requisitos" required></textarea>
+            </div>
+    
+            <!-- Benefícios -->
+            <div class="form-group">
+                <label for="beneficios">Benefícios:</label>
+                <textarea id="beneficios" name="beneficios" required></textarea>
+            </div>
+    
+            <!-- Contato -->
+            <div class="form-group">
+                <label for="contato">Contato (E-mail ou Telefone):</label>
+                <input type="text" id="contato" name="contato" required>
+            </div>
+
+            <div>
+                <button onclick="btnApagarVaga" id="apagarVaga">Apagar Vaga</button>
+            </div>
 </body>
 </html>

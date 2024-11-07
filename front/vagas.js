@@ -8,10 +8,10 @@ if (usuario) {
 
     if (usuario.tipo == 1) {
         let botaovaga = document.getElementById("botaovaga")
-        botaovaga.style.display = 'block';
+        botaovaga.style.display = 'block'; // se for empresa aparecera o botao de adicionar vaga
     } else {
         let botaovaga = document.getElementById("botaovaga")
-        botaovaga.style.display = 'none';
+        botaovaga.style.display = 'none'; // se for usuario nao vai aparecer o botao de adicionar vagas, mas poderá visualizar as vagas
     } 
 } else {
     let blocoNav = document.getElementById("blocoNav")
@@ -19,8 +19,8 @@ if (usuario) {
 }
 function limparLocalStorage() {
     localStorage.clear();
-    console.log('Local Storage limpo!');
-    location.reload();
+    console.log('Local Storage limpo!'); // limpa o local storage
+    location.reload(); // f5 na página para aparecer o botao de cadastro e login
 }
 
 async function getVagas() {

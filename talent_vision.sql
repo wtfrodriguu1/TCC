@@ -13,6 +13,8 @@ create table vagas(
     foreign key (id_empresa) references cadastro(id)
 );
 
+INSERT INTO vagas(nome_empresa, descricao, requisitos, beneficios, contato, id_empresa) VALUES('a','a','a','a','a','2');
+
 
 create table cadastro(
 	id int primary key auto_increment,
