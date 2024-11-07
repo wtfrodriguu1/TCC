@@ -1,6 +1,7 @@
 create database talent_vision;
 use talent_vision;
 
+
 create table vagas(
 	id int primary key auto_increment,
     nome_empresa varchar(20) not null,
@@ -14,7 +15,7 @@ create table vagas(
 create table cadastro(
 	id int primary key auto_increment,
     nome varchar (30) not null,
-    nascimento date not null,
+    nascimento varchar(45) not null,
     telefone varchar(15) not null,
     email varchar(50) not null,
     senha varchar(40) not null,
@@ -32,4 +33,4 @@ create table curriculo(
 
 select * from curriculo, vagas	, cadastro;
 
-drop table postagem;
+drop table curriculo, vagas	, cadastro;
