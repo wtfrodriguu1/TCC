@@ -25,7 +25,7 @@ async function loginUser(request, response) {
                     data: results[0]
                 });
         } else {
-            console.log(results.length)
+            // console.log(results.length)
             response
                 .status(401) // Código de status para "Não autorizado"
                 .json({

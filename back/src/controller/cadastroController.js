@@ -10,7 +10,7 @@ async function storeCadastro(request, response) {
         request.body.telefone,
         request.body.email,
         request.body.password,
-        request.body.tipoSelecionado,
+        request.body.tipoSelecionado
     );
 
     const query = "INSERT INTO cadastro(nome, nascimento, telefone, email, senha, tipo) VALUES(?,?,?,?,?,?)";
