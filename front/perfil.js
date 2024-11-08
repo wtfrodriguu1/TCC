@@ -8,5 +8,4 @@ if (userData) {
 
   name.value = userData.nome
   email.value = userData.email
-
-}
+};

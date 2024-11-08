@@ -40,7 +40,7 @@ async function getVagas() {
         //localStorage.getItem() <-- utilizar esse comando para buscar o tipo de conta
         //COM O IF E ELSE atualizar o style do botão para display: block
         for (let i = 0; i < content.data.length; i++) {
-            card_container.innerHTML += `<div class="card"><h3>${content.data[i].nome_empresa}</h3><p>${content.data[i].beneficios}</p><p>${content.data[i].descricao}</p><p>${content.data[i].requisitos}</p></div>`;
+            card_container.innerHTML += `<a href="vagainfo.html"><div class="card"><h3>${content.data[i].nome_empresa}</h3><p>${content.data[i].beneficios}</p><p>${content.data[i].descricao}</p><p>${content.data[i].requisitos}</p></div></a>`;
         }
 
     } else {
