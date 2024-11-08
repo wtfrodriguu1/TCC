@@ -49,4 +49,34 @@ async function getVagas() {
     }
 }
 
+// Supondo que você tenha uma lista de vagas renderizadas na página
+let vagasList = document.querySelectorAll(".vaga"); // Selecione todos os elementos que representam as vagas
+
+vagasList.forEach(vaga => {
+    vaga.onclick = async function () {
+        let idVaga = this.getAttribute("data-id"); // Supondo que você tenha um atributo data-id com o ID da vaga
+
+        const response = await fetch(`http://localhost:3005/api/cadastro/vagas/${idVaga}`, {
+            method: "GET",
+            headers: { "Content-type": "application/json;charset=UTF-8" }
+        });
+
+        let detalhesVaga = await response.json();
+
+        if (detalhesVaga.success) {
+            // Aqui você pode exibir os detalhes da vaga. Por exemplo:
+            document.getElementById("nomeEmpresa").innerText = detalhesVaga.data.nomeEmpresa;
+            document.getElementById("descricaoEmpresa").innerText = detalhesVaga.data.descricaoEmpresa;
+            document.getElementById("requisitos").innerText = detalhesVaga.data.requisitos;
+            document.getElementById("beneficios").innerText = detalhesVaga.data.beneficios;
+            document.getElementById("contato").innerText = detalhesVaga.data.contato;
+
+
+        
+        } else {
+            alert("Erro ao buscar os detalhes da vaga.");
+        }
+    };
+});
+
 getVagas();

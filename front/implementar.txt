@@ -1,0 +1,56 @@
+Instruções para Integração
+Crie o arquivo: Salve o código acima em um arquivo chamado vagas.js.
+
+Certifique-se de que o HTML esteja correto: O HTML que você já tem deve incluir a lista de vagas com o atributo data-id para cada vaga, conforme mostrado anteriormente.
+
+Verifique o endpoint: O código JavaScript faz uma requisição GET para http://localhost:3005/api/cadastro/vagas/${idVaga}. Certifique-se de que este endpoint esteja funcionando corretamente no seu backend e retorne os dados da vaga no formato esperado.
+
+Modal de Detalhes: O modal para exibir os detalhes da vaga já foi incluído no HTML. Quando a vaga é clicada, os detalhes serão preenchidos e o modal será exibido.
+
+Teste a funcionalidade: Após integrar o JavaScript e o HTML, teste clicando nas vagas para garantir que os detalhes sejam carregados e exibidos corretamente.
+
+Com isso, você deve ter uma funcionalidade completa para visualizar os detalhes das vagas de emprego ao clicar nelas. Se você tiver mais alguma dúvida ou precisar de mais ajustes, é só avisar!
+
+
+// Função para buscar detalhes da vaga ao clicar
+document.querySelectorAll(".vaga").forEach(vaga => {
+    vaga.onclick = async function () {
+        let idVaga = this.getAttribute("data-id"); // Obtém o ID da vaga
+
+        try {
+            const response = await fetch(`http://localhost:3005/api/cadastro/vagas/${idVaga}`, {
+                method: "GET",
+                headers: { "Content-type": "application/json;charset=UTF-8" }
+            });
+
+            if (!response.ok) {
+                throw new Error('Erro na requisição: ' + response.statusText);
+            }
+
+            let detalhesVaga = await response.json();
+
+            if (detalhesVaga.success) {
+                // Preenche os detalhes da vaga no modal
+                document.getElementById("detalhes-nome").innerText = detalhesVaga.data.nome_empresa;
+                document.getElementById("detalhes-descricao").innerText = detalhesVaga.data.descricao;
+                document.getElementById("detalhes-requisitos").innerText = detalhesVaga.data.requisitos;
+                document.getElementById("detalhes-beneficios").innerText = detalhesVaga.data.beneficios;
+                document.getElementById("detalhes-contato").innerText = detalhesVaga.data.contato;
+
+                // Exibe o modal com os detalhes da vaga
+                document.getElementById("modal-detalhes").style.display = "block";
+            } else {
+                alert("Erro ao buscar os detalhes da vaga.");
+            }
+        } catch (error) {
+            console.error("Erro:", error);
+            alert("Ocorreu um erro ao buscar os detalhes da vaga.");
+        }
+    };
+});
+
+// Função para apagar a vaga (exemplo)
+function btnApagarVaga() {
+    // Aqui você pode implementar a lógica para apagar a vaga
+    alert("Função de apagar vaga não implementada.");
+}
