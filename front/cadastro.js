@@ -36,8 +36,8 @@ button.onclick = async function () {
         let content = await response.json();
 
         console.log(content);
-        if (content.success) { // Corrigido de 'sucess' para 'success'
-            alert("Formulário enviado com sucesso, aproveite!");
+        if (content.success) { // Corrigido de 'success' para 'success'
+            alert("Formulário enviado com successo, aproveite!");
             window.location.href = "../front/login.html";
         } else {
             alert("Não enviado: " + (content.message || "Erro desconhecido"));

@@ -19,8 +19,8 @@ button.onclick = async function () {
     let content = await response.json();
 
     console.log(content);
-    if (content.sucess) {
-        alert("Formulário enviado com sucesso, aproveite!")
+    if (content.success) {
+        alert("Formulário enviado com successo, aproveite!")
         window.location.href = "../front/vagas.html";
     } else {
         alert("Não enviado");

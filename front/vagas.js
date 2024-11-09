@@ -32,8 +32,8 @@ async function getVagas() {
     let content = await response.json();
     console.log(content)
 
-    if (content.sucess) {
-        // alert("Formulário enviado com sucesso, aproveite!")
+    if (content.success) {
+        // alert("Formulário enviado com successo, aproveite!")
         // window.location.reload();
 
         const card_container = document.querySelector('.card-container');

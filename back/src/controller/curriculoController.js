@@ -16,15 +16,15 @@ async function storeCurriculo(request, response) {
             response
                 .status(201)
                 .json({
-                    sucess: true, 
-                    message: "Sucesso!",
+                    success: true, 
+                    message: "successo!",
                     data: results
                 })
         } else{
             response
                 .status(400)
                 .json({
-                    sucess: false,
+                    success: false,
                     message: "ops, deu problema!",
                     data: err
                 })

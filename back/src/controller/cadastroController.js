@@ -21,7 +21,7 @@ async function storeCadastro(request, response) {
                 .status(201)
                 .json({
                     success: true, 
-                    message: "Sucesso!",
+                    message: "successo!",
                     data: results
                 })
         } else{

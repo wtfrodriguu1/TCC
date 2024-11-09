@@ -21,15 +21,15 @@ async function storeTask(request, response) {
             response
                 .status(201)
                 .json({
-                    sucess: true, 
-                    message: "Sucesso!",
+                    success: true, 
+                    message: "successo!",
                     data: results
                 })
         } else{
             response
                 .status(400)
                 .json({
-                    sucess: false,
+                    success: false,
                     message: "ops, deu problema!",
                     data: err
                 })
@@ -47,15 +47,15 @@ async function buscandoVagas(request, response) {
             response
                 .status(201)
                 .json({
-                    sucess: true, 
-                    message: "Sucesso com o GET!",
+                    success: true, 
+                    message: "successo com o GET!",
                     data: results
                 })
         } else{
             response
                 .status(400)
                 .json({
-                    sucess: false,
+                    success: false,
                     message: "ops, deu problema no GET!",
                     data: err
                 })
