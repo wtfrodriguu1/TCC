@@ -1,3 +1,9 @@
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id'); 
+// Envia o id para outra página
+
+getVagaInfo(id)
+
 async function getVagaInfo(vagaId) {
     const response = await fetch('http://localhost:3005/api/buscarVagas', {
         method: "GET",
@@ -32,5 +38,11 @@ async function getVagaInfo(vagaId) {
     }
 }
 
-getVagaInfo(1);
+async function deleteProduct(id) {
+    await fetch(`http://localhost:3008/products/${id}`, {
+      method: 'DELETE'
+    });
+  }
+
+
 

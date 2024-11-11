@@ -39,8 +39,9 @@ async function getVagas() {
         const card_container = document.querySelector('.card-container');
         //localStorage.getItem() <-- utilizar esse comando para buscar o tipo de conta
         //COM O IF E ELSE atualizar o style do botão para display: block
+        console.log(content.data);
         for (let i = 0; i < content.data.length; i++) {
-            card_container.innerHTML += `<a href="vagainfo.html"><div class="card"><h3>${content.data[i].nome_empresa}</h3><p>${content.data[i].beneficios}</p><p>${content.data[i].descricao}</p><p>${content.data[i].requisitos}</p></div></a>`;
+            card_container.innerHTML += `<a href="vagainfo.html?id=${content.data[i].id}"><div class="card"><h3>${content.data[i].nome_empresa}</h3><p>${content.data[i].beneficios}</p><p>${content.data[i].descricao}</p><p>${content.data[i].requisitos}</p></div></a>`;
         }
 
     } else {
@@ -48,6 +49,7 @@ async function getVagas() {
         console.error()
     }
 }
+
 
 // Supondo que você tenha uma lista de vagas renderizadas na página
 let vagasList = document.querySelectorAll(".vaga"); // Selecione todos os elementos que representam as vagas
