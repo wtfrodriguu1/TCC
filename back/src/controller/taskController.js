@@ -64,6 +64,8 @@ async function buscandoVagas(request, response) {
 
 }
 
+// async function dele(request, response) {
+
 module.exports = {
     storeTask,
     buscandoVagas

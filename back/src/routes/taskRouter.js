@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const { storeTask, buscandoVagas } = require('../controller/taskController');
+const { storeTask, buscandoVagas} = require('../controller/taskController');
 
 // GET
 
@@ -11,4 +11,8 @@ router.get('/buscarVagas', buscandoVagas);
 
 router.post('/cadastro/vagas', storeTask);
 
+
+
+
 module.exports = router;
+
