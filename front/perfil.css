@@ -65,6 +65,11 @@ button {
     background-color: rgb(228, 228, 228);
 }
 
+#name {
+    height: 5vh;
+    border-radius: 4px;
+    background-color: rgb(228, 228, 228);
+}
 #password {
     height: 5vh;
     border-radius: 4px;

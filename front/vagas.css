@@ -17,6 +17,7 @@
   gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
+  
 }
 
 .card-container:nth-child(4n) {
@@ -32,7 +33,6 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #ccc;
-
 }
 
 .card h3 {

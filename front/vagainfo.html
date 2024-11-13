@@ -12,37 +12,42 @@
         <form id="formularioEmpresa">
             <!-- Nome da Empresa -->
             <div class="form-group">
-                <label for="nomeEmpresa">Nome da Empresa:</label>
-                <input type="text" id="nomeEmpresa" name="nomeEmpresa" required>
+                <label class="tamanhotexto" for="nomeEmpresa">Nome da Empresa:</label>
+                <textarea class="tamanhotexto" type="text" id="nomeEmpresa" name="nomeEmpresa" required></textarea>
             </div>
     
             <!-- Descrição da Empresa -->
             <div class="form-group">
-                <label for="descricaoEmpresa">Descrição da Empresa:</label>
-                <textarea id="descricaoEmpresa" name="descricaoEmpresa" required></textarea>
+                <label class="tamanhotexto" for="descricaoEmpresa">Descrição da Empresa:</label>
+                <textarea class="tamanhotexto" id="descricaoEmpresa" name="descricaoEmpresa" required></textarea>
             </div>
     
             <!-- Requisitos -->
             <div class="form-group">
-                <label for="requisitos">Requisitos:</label>
-                <textarea id="requisitos" name="requisitos" required></textarea>
+                <label class="tamanhotexto" for="requisitos">Requisitos:</label>
+                <textarea class="tamanhotexto" id="requisitos" name="requisitos" required></textarea>
             </div>
     
             <!-- Benefícios -->
             <div class="form-group">
-                <label for="beneficios">Benefícios:</label>
-                <textarea id="beneficios" name="beneficios" required></textarea>
+                <label class="tamanhotexto" for="beneficios">Benefícios:</label>
+                <textarea class="tamanhotexto" id="beneficios" name="beneficios" required></textarea>
             </div>
     
             <!-- Contato -->
             <div class="form-group">
-                <label for="contato">Contato (E-mail ou Telefone):</label>
-                <input type="text" id="contato" name="contato" required>
+                <label class="tamanhotexto" for="contato">Contato (E-mail ou Telefone):</label>
+                <textarea class="tamanhotexto" type="text" id="contato" name="contato" required></textarea>
             </div>
-
             <div>
-                <button type="button" onclick="deleteVaga()" id="apagarVaga">Apagar Vaga</button>
+                <button class="enviar-curriculo" type="button" onclick="enviarCurriculo()" id="enviarCurriculo">Tenho interesse!</button>
             </div>
+            
+<br>
+<div>
+    <button class="apagar-vaga" type="button" onclick="deleteVaga()" id="apagarVaga">Apagar Vaga</button>
+</div>
+
             <script src="vagainfo.js"></script>
 </body>
 </html>

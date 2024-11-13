@@ -2,6 +2,8 @@ let button = document.getElementById("enviar");
 
 button.onclick = async function () {
 
+    
+
     let email = document.getElementById("email").value;
     let senha = document.getElementById("password").value;
     if (!email && !senha) {

@@ -17,10 +17,16 @@ body {
 h1 {
     text-align: center;
     color: #333;
+    font-size: 8vh;
 }
 
 .form-group {
     margin-bottom: 15px;
+}
+
+.tamanhotexto{
+    font-size: 5vh;
+    
 }
 
 label {
@@ -42,11 +48,24 @@ textarea {
     height: 120px;
 }
 
-button {
+
+
+.apagar-vaga {
     padding: 10px 15px;
-    font-size: 16px;
+    font-size: 30px;
     color: white;
-    background-color: #007BFF;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.enviar-curriculo {
+    padding: 10px 15px;
+    font-size: 30px;
+    color: white;
+    background-color: #00892b;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -54,7 +73,8 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #ffcfcf;
+    transform: scale(1.04);
 }
 
 .footer {
