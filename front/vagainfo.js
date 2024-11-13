@@ -27,24 +27,33 @@ async function getVagaInfo(vagaId) {
 }
 
 // Função para deletar a vaga
+// Função para deletar a vaga com verificação do tipo de usuário
 async function deleteVaga() {
-    if (confirm("Tem certeza de que deseja deletar esta vaga?")) {
-        try {
-            const response = await fetch(`http://localhost:3005/api/deletarVaga/${id}`, {
-                method: 'DELETE',
-                headers: { "Content-type": "application/json;charset=UTF-8" }
-            });
-            
-            const result = await response.json();
-            
-            if (result.success) {
-                alert("Vaga deletada com sucesso.");
-                window.location.href = "../front/vagas.html"; // Redirecionar após deletar
-            } else {
-                alert("Erro ao deletar a vaga.");
+    const tipoUsuario = localStorage.getItem("tipoUsuario");
+
+    // Verifica se o usuário é uma empresa (tipoUsuario == 1)
+    if (tipoUsuario == "1") { // Tipo 1 é empresa
+        if (confirm("Tem certeza de que deseja deletar esta vaga?")) {
+            try {
+                const response = await fetch(`http://localhost:3005/api/deletarVaga/${id}`, {
+                    method: 'DELETE',
+                    headers: { "Content-type": "application/json;charset=UTF-8" }
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert("Vaga deletada com sucesso.");
+                    window.location.href = "../front/vagas.html"; // Redirecionar após deletar
+                } else {
+                    alert("Erro ao deletar a vaga.");
+                }
+            } catch (error) {
+                console.error("Erro ao deletar a vaga:", error);
             }
-        } catch (error) {
-            console.error("Erro ao deletar a vaga:", error);
         }
+    } else {
+        alert("Somente empresas podem deletar vagas.");
     }
 }
+

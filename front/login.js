@@ -1,8 +1,8 @@
 document.getElementById("enviar1").onclick = async function () {
-    let email = document.getElementById("email").value; // Obtendo o valor dos campos
+    let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
 
-    let data = { email, password }; // Nome dos campos deve corresponder ao que o servidor espera
+    let data = { email, password };
 
     try {
         const response = await fetch('http://localhost:3005/api/login', {
@@ -18,16 +18,11 @@ document.getElementById("enviar1").onclick = async function () {
         if (content.success) {
             alert("Login bem-sucedido!");
             
-            localStorage.setItem("usuario", JSON.stringify(content.data))
-            
-            localStorage.setItem("id", JSON.stringify(content.data.id))
-            
-            if(content.data.tipo == 1){
-                localStorage.setItem("Empresa", "Empresa");
-            }else{
-                localStorage.setItem("Usuario", "Usuario");
-            }
-            
+            // Salva informações do usuário e tipo no localStorage
+            localStorage.setItem("usuario", JSON.stringify(content.data));
+            localStorage.setItem("id", JSON.stringify(content.data.id));
+            localStorage.setItem("tipoUsuario", content.data.tipo); // Salva o tipo diretamente
+
             window.location.href = "../front/vagas.html";
         } else {
             alert("Falha no login: " + content.message);
