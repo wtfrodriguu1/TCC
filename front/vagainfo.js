@@ -39,7 +39,7 @@ async function deleteVaga() {
             
             if (result.success) {
                 alert("Vaga deletada com sucesso.");
-                window.location.href = "/"; // Redirecionar após deletar
+                window.location.href = "../front/vagas.html"; // Redirecionar após deletar
             } else {
                 alert("Erro ao deletar a vaga.");
             }
