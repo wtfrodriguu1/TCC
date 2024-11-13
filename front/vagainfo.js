@@ -1,8 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id'); 
-// Envia o id para outra página
+const id = urlParams.get('id');
 
-getVagaInfo(id)
+getVagaInfo(id);
 
 async function getVagaInfo(vagaId) {
     const response = await fetch('http://localhost:3005/api/buscarVagas', {
@@ -10,39 +9,42 @@ async function getVagaInfo(vagaId) {
         headers: { "Content-type": "application/json;charset=UTF-8" }
     });
 
-    let content = await response.json();
+    const content = await response.json();
     
-    // console.log("entrou:", content.data)
     if (content.success) {
-        console.log("teste: "+ content.data.length)
-        const vaga = content.data.filter((v)=>v.id == vagaId)
-        // content.data.map((v)=>console.log(v.id))
-        // console.log(JSON.stringify(content.data))
+        const vaga = content.data.find(v => v.id == vagaId);
         
-        const nomeEmpresa = document.getElementById("nomeEmpresa")
-        const descricaoEmpresa = document.getElementById("descricaoEmpresa")
-        const  requisitos = document.getElementById("requisitos")
-        const  beneficios = document.getElementById("beneficios")
-        const  contato = document.getElementById("contato")
-      
-        nomeEmpresa.value = vaga[0].nome_empresa
-        descricaoEmpresa.value = vaga[0].descricao
-        requisitos.value = vaga[0].requisitos
-        beneficios.value = vaga[0].beneficios
-        contato.value = vaga[0].contato
-
-        console.log(vaga)
-
+        if (vaga) {
+            document.getElementById("nomeEmpresa").value = vaga.nome_empresa;
+            document.getElementById("descricaoEmpresa").value = vaga.descricao;
+            document.getElementById("requisitos").value = vaga.requisitos;
+            document.getElementById("beneficios").value = vaga.beneficios;
+            document.getElementById("contato").value = vaga.contato;
+        }
     } else {
-        console.error()
+        console.error("Erro ao buscar informações da vaga.");
     }
 }
 
-async function deleteProduct(id) {
-    await fetch(`http://localhost:3008/products/${id}`, {
-      method: 'DELETE'
-    });
-  }
-
-
-
+// Função para deletar a vaga
+async function deleteVaga() {
+    if (confirm("Tem certeza de que deseja deletar esta vaga?")) {
+        try {
+            const response = await fetch(`http://localhost:3005/api/deletarVaga/${id}`, {
+                method: 'DELETE',
+                headers: { "Content-type": "application/json;charset=UTF-8" }
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                alert("Vaga deletada com sucesso.");
+                window.location.href = "/"; // Redirecionar após deletar
+            } else {
+                alert("Erro ao deletar a vaga.");
+            }
+        } catch (error) {
+            console.error("Erro ao deletar a vaga:", error);
+        }
+    }
+}

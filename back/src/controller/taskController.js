@@ -64,9 +64,32 @@ async function buscandoVagas(request, response) {
 
 }
 
-// async function dele(request, response) {
+
+// Função para deletar vagas - DELETE
+async function deleteVaga(request, response) {
+    const { id } = request.params;
+
+    const query = "DELETE FROM vagas WHERE id = ?";
+
+    connection.query(query, [id], (err, results) => {
+        if (results.affectedRows > 0) {
+            response.status(200).json({
+                success: true,
+                message: "Vaga deletada com sucesso!"
+            });
+        } else {
+            response.status(400).json({
+                success: false,
+                message: "Erro ao deletar a vaga!",
+                error: err
+            });
+        }
+    });
+}
 
 module.exports = {
     storeTask,
-    buscandoVagas
-}
+    buscandoVagas,
+    deleteVaga
+};
+
