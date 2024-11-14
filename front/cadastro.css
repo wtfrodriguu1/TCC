@@ -29,6 +29,9 @@ label {
     margin-bottom: 5px;
     color: #555;
 }
+.tamanhodotexto{
+    font-size: 5vh;   
+}
 
 .tamanhotexto {
     width: 100%;
