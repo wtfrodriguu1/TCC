@@ -29,7 +29,8 @@ create table curriculo(
 	id int primary key auto_increment,
     nome varchar (40) not null,
     idade varchar (3) not null,
-    descricao varchar (300) not null,
+    experiencias varchar (300) not null,
+    bio varchar (300) not null,
     id_usuario int, 
     foreign key (id_usuario) references cadastro(id)
 );
@@ -38,3 +39,5 @@ create table curriculo(
 select * from curriculo, vagas	, cadastro;
 
 drop table curriculo, vagas	, cadastro;
+
+drop table curriculo;

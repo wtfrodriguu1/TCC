@@ -1,12 +1,13 @@
 let button = document.querySelector("button");
 
 button.onclick = async function () {
-    let nome_user = document.getElementById("nome-user").value;
-    let descricao1 = document.getElementById("descricao1").value;
-    let idade = document.getElementById("idade").value;
-    let enviar_formularioc = document.getElementById("enviar_formularioc").value;
+    let curriculoNome = document.getElementById("curriculoNome").value;
+    let curriculoIdade = document.getElementById("curriculoIdade").value;
+    let curriculoExperiencia = document.getElementById("curriculoExperiencia").value;
+    let curriculoBio = document.getElementById("curriculoBio").value;
+    let enviarcurriculo = document.getElementById("enviarcurriculo").value;
 
-    let data = { nome_user, descricao1, idade, enviar_formularioc }
+    let data = { curriculoNome, curriculoIdade, curriculoExperiencia, curriculoBio, enviarcurriculo }
 
     const response = await fetch('http://localhost:3005/api/carregar', {
         method: "POST",

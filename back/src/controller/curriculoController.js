@@ -4,12 +4,14 @@ const dotenv = require('dotenv').config();
 // Carregar currículo - POST
 async function storeCurriculo(request, response) {
     const params = Array(
-        request.body.nome_user,
-        request.body.descricao1,
-        request.body.idade
+        request.body.curriculoNome,
+        request.body.curriculoIdade,
+        request.body.curriculoExperiencia,
+        request.body.curriculoBio,
+        request.bodyenviarcurriculo
     );
 
-    const query = "INSERT INTO curriculo(nome, descricao, idade) VALUES(?,?,?)";
+    const query = "INSERT INTO curriculo(nome, idade, experiencias, bio) VALUES(?,?,?,?)";
 
     connection.query(query, params, (err, results) => {
         if(results) {
