@@ -62,9 +62,23 @@ h2 {
 .bloco_perfil>a {
   text-decoration: none;
   color: black;
+  
 }
 
-.bloco_nav>a {
+.loginecadastro>a {
+  text-decoration: none;
+  color: black;
+  
+}
+
+.bloco_nav{
   text-decoration: none;
   color: black;
 }
+
+.loginecadastro{
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
+

@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: rgb(255, 243, 192);
+    background-color: rgb(234, 255, 240);
 }
 
 .container {
@@ -72,4 +72,8 @@ button {
 
 label {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.tamanhodotexto1{
+    font-size: 5vh;  
 }

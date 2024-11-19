@@ -20,5 +20,21 @@ body {
   height: 40%;
   margin-top: 50%;
   margin-left: 20%;
+}
 
+.botaocurriculo {
+  border-radius: 40px;
+  width: 25%;
+  height: 12vh;
+  font-size: 2vw;
+  font-weight: bold;
+  margin: 5vh;
+  margin-left: 25%;
+  position: absolute;
+  top: 50%;
+}
+
+.botaocurriculo:hover {
+  background-color: #84ff8a;
+  transform: scale(1.1);
 }
