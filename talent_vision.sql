@@ -1,6 +1,6 @@
 create database talent_vision;
 use talent_vision;
-
+drop database talent_vision;
 
 create table vagas(
 	id int primary key auto_increment,

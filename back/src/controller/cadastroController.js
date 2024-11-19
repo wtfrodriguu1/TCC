@@ -72,6 +72,8 @@ async function verificarEmailRota(request, response) {
     }
 }
 
+
+
 module.exports = {
     storeCadastro,
     verificarEmailRota

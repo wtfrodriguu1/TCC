@@ -8,4 +8,5 @@ router.post("/verificar-email", verificarEmailRota);
 // Rota para o cadastro
 router.post("/cadastrar", storeCadastro);
 
+
 module.exports = router;
