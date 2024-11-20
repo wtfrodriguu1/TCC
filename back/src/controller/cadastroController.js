@@ -1,6 +1,7 @@
 const connection = require('../config/db');
 const dotenv = require('dotenv').config();
 
+
 // Função para verificar se o e-mail já está registrado
 async function verificarEmail(email) {
     return new Promise((resolve, reject) => {

@@ -41,6 +41,7 @@ h1 {
 }
 
 .tamanhodotexto5 {
+    font-size: 4vh;
     margin-right: 5vh;
     width: 70%; /* Ajuste a largura do campo de entrada */
     padding: 2vh; /* Adicione algum preenchimento */
@@ -59,33 +60,26 @@ form {
     justify-content: center;
     flex-direction: column;
     height: 20vh;
-    margin-top: 4vh;
+    margin-top: 5vh;
     
 }
 
-/* .enviar {
+.botaosair {
+    background-color: red; /* Define a cor de fundo como vermelho */
+    color: white; /* Define a cor do texto como branco */
+    border: none; 
+    border-radius: 2vh; /* Arredonda as bordas do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 4vh; /* Ajusta o tamanho da fonte */
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 10vw;
+    height: 8vh;
 }
 
-
-#email {
-    height: 5vh;
-    border-radius: 4px;
-    background-color: white;
+.centralizarbtn {
+    display: flex;
+    justify-content: right;
+    margin-right: 5vh;
 }
-
-#name {
-    height: 5vh;
-    border-radius: 4px;
-    background-color: white;
-}
-#password {
-    height: 5vh;
-    border-radius: 4px;
-    background-color: rgb(228, 228, 228);
-}
-
-label {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-} */

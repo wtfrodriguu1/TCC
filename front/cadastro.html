@@ -17,49 +17,50 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js" integrity="sha256-4lhPGIWv8kmCP7JRGJE4IdRod2IdQEZPui6f0uICZ6w=" crossorigin="anonymous"></script>
     <div class="container">
         <div class="square">
-            <h1>Cadastre-se</h1>
+            <h1>CADASTRE-SE</h1>
 
             <form id="formulario"> <!-- Adicionando id para o formulário -->
                 <div class="form-group">
-                    <label class="tamanhodotexto" for="name">Nome completo:</label>
+                    <label class="tamanhodotexto" for="name">NOME COMPLETO:</label>
                     <input class="tamanhodotexto" type="text" id="name" name="name" required></input>
                 </div>
 
                 <div class="form-group">
-                    <label class="tamanhodotexto" for="date">Data de Nascimento:</label>
+                    <label class="tamanhodotexto" for="date">DATA DE NASCIMENTO:</label>
                     <input class="tamanhodotexto" type="text" id="data-nascimento" name="data" required></input>
                 </div>
 
                 <div class="form-group">
-                    <label class="tamanhodotexto" for="telefone">Telefone:</label>
+                    <label class="tamanhodotexto" for="telefone">TELEFONE:</label>
                     <input class="tamanhodotexto" type="text" id="telefone" name="telefone" required></input>
                 </div>
 
 
                 <div class="form-group">
-                    <label class="tamanhodotexto" for="email">Email:</label>
+                    <label class="tamanhodotexto" for="email">EMAIL:</label>
                     <input class="tamanhodotexto" type="email" id="email" name="email" required></input>
                 </div>
                 <div class="form-group">
-                    <label class="tamanhodotexto" for="password">Defina sua senha (+ de 6 caracteres)</label>
+                    <label class="tamanhodotexto" for="password">DEFINA SUA SENHA:</label>
                     <input class="tamanhodotexto" type="password" id="password" name="password" required></input>
                 </div>
-                <div>
-                    <label class="tamanhodotexto">
-                        <input id="empresa" type="radio" name="tipo" value="empresa" required>
-                        Empresa
-                    </label><br>
+                    <div>
+                        
+                        <label class="caixa">
+                            <input class="caixa" id="empresa" type="radio" name="tipo" value="empresa" required>
+                            EMPRESA
+                        </label>
 
-                    <label class="tamanhodotexto">
-                        <input id="cliente" type="radio" name="tipo" value="cliente" required>
-                        Cliente
-                    </label>
-                </div>
+                        <label class="caixa">
+                            <input class="caixa" id="cliente" type="radio" name="tipo" value="cliente" required>
+                            CLIENTE
+                        </label>
+                    </div>
                 <div class="enviar">
                     <button id="enviar" class="tamanhodotexto1" type="button">Criar Conta</button>
                 </div>
             </form>
-            <h2>Ja possui conta? <a href="login.html">clique aqui</a> </h2>
+            <h2>JÁ POSSUI CONTA? <a href="login.html">CLIQUE AQUI</a> </h2>
         </div>
     </div>
     <script src="cadastro.js"></script>

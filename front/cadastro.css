@@ -11,7 +11,7 @@ body {
     padding: 20px;
     background-color: rgb(255, 255, 255);
     border-radius: 2vh;
-    
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     border-radius: 2vh;
 }
 
@@ -23,12 +23,28 @@ h1 {
 
 .form-group {
     display: flex; /* Usa flexbox para alinhar os itens em linha */
-    justify-content: flex-start; /* Alinha os itens à esquerda */
     align-items: center; /* Alinha verticalmente ao centro */
     margin-bottom: 15px; /* Espaçamento entre os grupos de formulário */
 }
 
+label.caixa {
+    display: flex;
+    width: 30%; /* Ajuste a largura do rótulo conforme necessário */
+    margin-right: 10px; /* Espaçamento entre o rótulo e o input */
+    font-weight: bold; /* Deixa o rótulo em negrito */
+    font-size: 2.9vh;
+    align-items: center; /* Centraliza o texto do rótulo verticalmente */
+}
+
+input.caixa {
+    width: 70%; /* Ajuste a largura do campo de entrada */
+    padding: 10px; /* Preenchimento interno */
+    border: 1px solid #ccc; /* Borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
 label.tamanhodotexto {
+    
     width: 30%; /* Ajuste a largura do rótulo conforme necessário */
     margin-right: 10px; /* Espaçamento entre o rótulo e o input */
     font-weight: bold; /* Deixa o rótulo em negrito */
@@ -36,6 +52,7 @@ label.tamanhodotexto {
 }
 
 input.tamanhodotexto {
+    font-size: 4vh;
     width: 70%; /* Ajuste a largura do campo de entrada */
     padding: 10px; /* Preenchimento interno */
     border: 1px solid #ccc; /* Borda padrão */
@@ -66,4 +83,14 @@ button:hover {
 .enviar {
     display: flex;
     justify-content: center;
+}
+
+
+
+
+input[type="radio"] {
+   
+    width: 40px; /* Aumenta a largura da bolinha */
+    height: 40px; /* Aumenta a altura da bolinha */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
 }

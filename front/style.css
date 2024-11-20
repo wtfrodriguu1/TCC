@@ -57,6 +57,7 @@ button {
     font-weight: bold;
     margin: 1vh;
     margin-left: 2vw;
+    background-color:white;
 }
 
 button:hover {
