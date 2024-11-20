@@ -82,3 +82,4 @@ vagasList.forEach(vaga => {
 });
 
 getVagas();
+

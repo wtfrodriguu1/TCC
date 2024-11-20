@@ -18,7 +18,12 @@
   gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  
+
+}
+
+.card-container a {
+  text-decoration: none; /* Remove o sublinhado dos links */
+  color: inherit; /* Mantém a cor do texto do pai */
 }
 
 .card-container:nth-child(4n) {

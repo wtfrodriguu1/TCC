@@ -23,17 +23,30 @@ async function getVagaInfo(vagaId) {
         }
     } else {
         console.error("Erro ao buscar informações da vaga.");
+        Swal.fire({
+            title: "Erro!",
+            text: "Erro ao buscar informações da vaga.",
+            icon: "error"
+        });
     }
 }
 
 // Função para deletar a vaga
-// Função para deletar a vaga com verificação do tipo de usuário
 async function deleteVaga() {
     const tipoUsuario = localStorage.getItem("tipoUsuario");
 
     // Verifica se o usuário é uma empresa (tipoUsuario == 1)
     if (tipoUsuario == "1") { // Tipo 1 é empresa
-        if (confirm("Tem certeza de que deseja deletar esta vaga?")) {
+        const result = await Swal.fire({
+            title: "Tem certeza?",
+            text: "Você deseja deletar esta vaga?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: 'Sim, deletar!',
+            cancelButtonText: 'Cancelar'
+        });
+
+        if (result.isConfirmed) {
             try {
                 const response = await fetch(`http://localhost:3005/api/deletarVaga/${id}`, {
                     method: 'DELETE',
@@ -43,17 +56,34 @@ async function deleteVaga() {
                 const result = await response.json();
 
                 if (result.success) {
-                    alert("Vaga deletada com sucesso.");
-                    window.location.href = "../front/vagas.html"; // Redirecionar após deletar
+                    Swal.fire({
+                        title: "Sucesso!",
+                        text: "Vaga deletada com sucesso.",
+                        icon: "success"
+                    }).then(() => {
+                        window.location.href = "../front/vagas.html"; // Redirecionar após deletar
+                    });
                 } else {
-                    alert("Erro ao deletar a vaga.");
+                    Swal.fire({
+                        title: "Erro!",
+                        text: "Erro ao deletar a vaga.",
+                        icon: "error"
+                    });
                 }
             } catch (error) {
                 console.error("Erro ao deletar a vaga:", error);
+                Swal.fire({
+                    title: "Erro!",
+                    text: "Houve um erro ao tentar deletar a vaga. Tente novamente.",
+                    icon: "error"
+                });
             }
         }
     } else {
-        alert("Somente empresas podem deletar vagas.");
+        Swal.fire({
+            title: "Acesso Negado!",
+            text: "Somente empresas podem deletar vagas.",
+            icon: "warning"
+        });
     }
 }
-

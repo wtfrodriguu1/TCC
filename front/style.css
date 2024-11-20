@@ -43,7 +43,7 @@ header .bloco_nav {
 }
 
 button {
-    border-radius: 40px;
+    border-radius: 2vh;
     width: 85%;
     height: 12vh;
     font-size: 3vw;

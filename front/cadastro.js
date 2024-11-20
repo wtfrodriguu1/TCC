@@ -17,14 +17,22 @@ button.onclick = async function () {
 
     // Verifica se um tipo foi selecionado
     if (!tipoSelecionado) {
-        alert("Por favor, selecione um tipo.");
+        Swal.fire({
+            title: "Atenção!",
+            text: "Por favor, selecione um tipo.",
+            icon: "warning"
+        });
         return; // Para a execução caso nenhum tipo tenha sido selecionado
     }
 
     // Verificar se o e-mail já existe
     const emailExiste = await verificarEmail(email);
     if (emailExiste) {
-        alert("Este e-mail já está em uso. Por favor, use outro e-mail.");
+        Swal.fire({
+            title: "Atenção!",
+            text: "Este e-mail já está em uso. Por favor, use outro e-mail.",
+            icon: "warning"
+        });
         return; // Impede o envio do formulário se o e-mail já existir
     }
 
@@ -42,14 +50,27 @@ button.onclick = async function () {
 
         console.log(content);
         if (content.success) {
-            alert("Formulário enviado com sucesso, aproveite!");
-            window.location.href = "../front/login.html";
+            Swal.fire({
+                title: "Sucesso!",
+                text: "Formulário enviado com sucesso, aproveite!",
+                icon: "success"
+            }).then(() => {
+                window.location.href = "../front/login.html";
+            });
         } else {
-            alert("Não enviado: " + (content.message || "Erro desconhecido"));
+            Swal.fire({
+                title: "Erro!",
+                text: "Não enviado: " + (content.message || "Erro desconhecido"),
+                icon: "error"
+            });
         }
     } catch (error) {
         console.error("Erro:", error);
-        alert("Houve um erro ao enviar o formulário.");
+        Swal.fire({
+            title: "Erro!",
+            text: "Houve um erro ao enviar o formulário.",
+            icon: "error"
+        });
     }
 };
 
@@ -66,7 +87,11 @@ async function verificarEmail(email) {
         return data.existe;  // Retorna true se o e-mail existir, caso contrário, false
     } catch (error) {
         console.error('Erro na verificação de e-mail:', error);
-        alert('Erro ao verificar o e-mail. Tente novamente.');
+        Swal.fire({
+            title: "Erro!",
+            text: "Erro ao verificar o e-mail. Tente novamente.",
+            icon: "error"
+        });
         return false;  // Caso haja erro na verificação, consideramos que o e-mail não existe
     }
 }
