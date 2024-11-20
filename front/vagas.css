@@ -60,8 +60,9 @@
 }
 
 h2 {
-  font-size: 40px;
-  display: grid;
+  font-size: 30px; /* Tamanho da fonte */
+  margin: 20px 0; /* Margem superior e inferior */
+  text-align: center; /* Centraliza o texto */
 }
 
 .bloco_perfil>a {
@@ -88,7 +89,26 @@ h2 {
 }
 
 .sobreimg {
-  position: absolute;
-  bottom: 0;
-  left: 24%;
+  position: absolute; /* Permite posicionar em relação à column1 */
+  bottom: 20px; /* Distância do fundo */
+  right: 20px; /* Distância da direita */
+  display: flex; /* Usar flexbox para alinhar o texto e a imagem */
+  align-items: center; /* Alinha verticalmente o texto e a imagem */
+}
+.sobreimg img {
+  max-width: 100%; /* Faz a imagem ser responsiva */
+  height: auto; /* Mantém a proporção da imagem */
+  /* Você pode definir uma altura específica se necessário */
+  height: 8vh; /* Ajuste conforme necessário */
+}
+
+.sobreimg p {
+  margin-right: 10px; /* Espaçamento entre o texto e a imagem */
+  font-size: 4vh; /* Tamanho da fonte do texto "Sobre" */
+  text-decoration: none;
+}
+
+.sem-sublinhado {
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: inherit; /* Mantém a cor do texto do pai */
 }

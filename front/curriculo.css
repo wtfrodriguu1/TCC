@@ -23,7 +23,7 @@ body {
 }
 
 .botaocurriculo {
-  border-radius: 40px;
+  border-radius: 2vh;
   width: 25%;
   height: 12vh;
   font-size: 2vw;
@@ -34,10 +34,7 @@ body {
   top: 50%;
 }
 
-.botaocurriculo:hover {
-  background-color: #84ff8a;
-  transform: scale(1.1);
-}
+
 
 .sobreimg {
   position: absolute;
