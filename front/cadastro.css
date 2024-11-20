@@ -1,16 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(234, 255, 240);
+    background-color: rgb(240, 241, 232);
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 400px;
+    max-width: 60%;
     margin: 50px auto;
     padding: 20px;
-    background-color: rgb(0, 185, 71);
-    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2vh;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 2vh;
 }
@@ -22,48 +22,48 @@ h1 {
 }
 
 .form-group {
-    margin-bottom: 15px;
+    display: flex; /* Usa flexbox para alinhar os itens em linha */
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    align-items: center; /* Alinha verticalmente ao centro */
+    margin-bottom: 15px; /* Espaçamento entre os grupos de formulário */
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-}
-.tamanhodotexto{
-    font-size: 5vh;
-    color: black;   
-}
-.tamanhodotexto1{
-    font-size: 5vh;  
+label.tamanhodotexto {
+    width: 30%; /* Ajuste a largura do rótulo conforme necessário */
+    margin-right: 10px; /* Espaçamento entre o rótulo e o input */
+    font-weight: bold; /* Deixa o rótulo em negrito */
+    font-size: 2.9vh;
 }
 
-.tamanhotexto {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
+input.tamanhodotexto {
+    width: 70%; /* Ajuste a largura do campo de entrada */
+    padding: 10px; /* Preenchimento interno */
+    border: 1px solid #ccc; /* Borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
 }
-
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
-    border-color: #00892b;
+    border-color: #000000;
     outline: none;
 }
 
 button {
-    border-radius: 40px;
-    width: 85%;
-    height: 12vh;
+    border-radius: 2vh;
+    width: 40%;
+    height: 10vh;
     font-size: 3vw;
     font-weight: bold;
     margin: 1vh;
-    margin-left: 2vw;
+    
 }
 
 button:hover {
-    background-color: #84ff8a;
+    background-color: #a1e6ff;
     transform: scale(1.1);
+}
+
+.enviar {
+    display: flex;
+    justify-content: center;
 }

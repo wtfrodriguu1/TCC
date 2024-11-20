@@ -13,31 +13,36 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js" integrity="sha256-4lhPGIWv8kmCP7JRGJE4IdRod2IdQEZPui6f0uICZ6w=" crossorigin="anonymous"></script>
-    <h1>Currículo</h1>
+    <h1>CURRÍCULO</h1>
     <div class="container">
         
         <form>
             <div class="form-group">
-                <label class="tamanhodotexto">Nome:</label>
-                <input class="tamanhodotexto" type="text" id="curriculoNome" required></input>
+                <label class="tamanhodotexto" for="curriculoNome">NOME:</label>
+                <input class="tamanhodotexto" type="text" id="curriculoNome" required>
             </div>
             <div class="form-group">
-                <label class="tamanhodotexto">Idade:</label>
-                <input class="tamanhodotexto" type="text" id="curriculoIdade" required></input>
+                <label class="tamanhodotexto" for="curriculoIdade">IDADE:</label>
+                <input class="tamanhodotexto" type="text" id="curriculoIdade" required>
             </div>
             <div class="form-group">
-                <label class="tamanhodotexto">Experiências Profissionais:</label>
-                <textarea class="tamanhodotexto" type="text" id="curriculoExperiencia" required></textarea>
+                <label class="tamanhodotexto" for="curriculoExperiencia">EXPERIÊNCIAS PROFISSIONAIS:</label>
+                <input class="tamanhodotexto" id="curriculoExperiencia" required></input>
             </div>
             <div class="form-group">
-                <label class="tamanhodotexto">Um pouco sobre mim:</label>
-                <textarea class="tamanhodotexto" type="text" id="curriculoBio" required></textarea>
+                <label class="tamanhodotexto" for="curriculoBio">UM POUCO SOBRE MIM:</label>
+                <input class="tamanhodotexto" id="curriculoBio" required></input>
+            </div>
+
+            <div class="form-group">
+                <label class="tamanhodotexto" for="curriculoFile">CARREGAR CURRÍCULO:</label>
+                <input class="tamanhodotexto" type="file" id="curriculoFile" required>
+                <i class="fas fa-upload" style="font-size: 24px; margin-top: 5px;"></i> <!-- Ícone de upload -->
             </div>
             
             <div class="enviar">
-                <button id="enviarcurriculo" class="tamanhodotexto1" type="button">Enviar</button>
+                <button id="enviarcurriculo" class="tamanhodotexto1" type="button">ENVIAR</button>
             </div>
-            
         </form>
     </div>
 
